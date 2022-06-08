@@ -8,62 +8,76 @@
     <body>
         <header>
 
-            <figure class="Logo_JSI">
-                <img src="/imgs/Logo_JSI.PNG" alt="Logo de JSI" />
+            <figure class="logo">
+                <img src="imgs/logo.png" alt="Logo de JSI" />
             </figure>
 
-            <div>
+            <div class="header_bloc">
                 <h1>
                     JustStreamIt
                 </h1>
                 <p>
-                    Work in progress
+                    Votre meilleur ami pour de bonnes soirées
                 </p>
             </div>
 
                 <nav>
-                    <ol>
+                    <ul>
                         <li><a href="accueil.html"> Accueil</a></li>
                         <li><a href="categories.html"> Catégories</a></li>
-                    </ol>
+                    </ul>
                 </nav>
 
         </header>
 
-        <section class="best-movie-section">
-            <h2 id="title-best">Meilleur film</h2>
-            <div id="best-desc">
-              <p>Loading</p>
-            </div>
-          </section>
-
-        <section>
-
-            <div class="Categories_titles">
-                <h3>Category 1</h3>
-            </div>
-
-            <section><button class="scroller">←</button>
-                <div class="TBD"> <p>Un jour du contenu censé existera ici</p></div>
-            <button class="scroller"></button>→</section>
-
-            <div class="Categories_titles">
-                <h3>Category 2</h3>
-            </div>
-
-            <section><button class="scroller">←</button>
-                <div class="TBD"> <p>Un jour du contenu censé existera ici</p></div>
-            <button class="scroller"></button>→</section>
-
-            <div class="Categories_titles">
-                <h3>Category 3</h3>
-            </div>
-
-            <section><button class="scroller">←</button>
-                <div class="TBD"> <p>Un jour du contenu censé existera ici</p></div>
-            <button class="scroller"></button>→</section>
-
+        <section class="best_movie">
+            <h2 id="best_movie_title">Meilleur Film</h2>
+            <div id="best_movie_div">Loading</div>
         </section>
 
+        <section class="movies_list">
+
+            <div class="categories_titles">
+                <h2>Meilleurs films</h2>
+            </div>
+
+            <section class="movies">
+                <button class="scroller">←</button>
+                    <div id="best_films"><p>Loading</p></div>
+                <button class="scroller">→</button>
+              </section>
+
+            <div class="categories_titles">
+                <h2>Category 1</h2>
+            </div>
+
+            <section class="movies">
+                <button class="scroller">←</button>
+                    <div id="action"> <p>Loading</p></div>
+                <button class="scroller">→</button>
+            </section>
+
+            <div class="categories_titles">
+                <h2>Category 2</h2>
+            </div>
+
+            <section class="movies">
+                <button class="scroller">←</button>
+                    <div id="fantasy"> <p>Loading</p></div>
+                <button class="scroller">→</button>
+            </section>
+
+            <div class="categories_titles">
+                <h2>Category 3</h2>
+            </div>
+
+            <section class="movies">
+                <button class="scroller">←</button>
+                    <div id="war"> <p>Loading</p></div>
+                <button class="scroller">→</button>
+            </section>
+
+        </section>
+        <script src="scripts.js"></script>
     </body>
 </html>
