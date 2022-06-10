@@ -39,14 +39,6 @@ async function getTopMovie() {//Gets the best movie id
     return movie_id;
 }
 
-async function getCover(movie) {// Get covers for display
-    var title = movie["title"];
-    var picture = movie["image_url"];
-    var id = movie["id"];
-    var result = `<p><input type="image" src="${picture}" alt="${title}" id="${id}"/></p>`;
-    return result;
-}
-
 function displayMovies(list, element){
     var inner = "";
     var target = document.getElementById(element);
@@ -55,7 +47,7 @@ function displayMovies(list, element){
         var title = list[i]["title"];
         var picture = list[i]["image_url"];
         var id = list[i]["id"];
-        movie = `<p><input type="image" src="${picture}" alt="${title}" id="${id}"/></p>`;
+        movie = `<p><input type="image" src="${picture}" alt="${title}" id="${id}" onclick="openModal(BASE_URL, id)"/></p>`;
         inner = inner.concat(" ", movie)
     }
     target.innerHTML = inner;
@@ -68,7 +60,7 @@ async function displayBest(movieId) {//Show the best movie
     var data = await response.json();
     var title = data["title"];
     var picture = data["image_url"];
-    var image = `<p><input type="image" src="${picture}" alt="${title}" id="${movieId}"/></p>`;
+    var image = `<p><input type="image" src="${picture}" alt="${title} -cliquez pour plus d'information" id="${movieId}" onclick="openModal(BASE_URL, id)"/></p>`;
     target_title.innerHTML = title;
     target_div.innerHTML = image;
 }
@@ -139,4 +131,52 @@ async function load() {
 );
 }
 
-load();
+async function openModal(url, id){
+    var response = await fetch(`${url}${id}`);
+    var result = await response.json();
+    var cover = result["image_url"];
+    var title = result["title"];
+    var genres = result["genres"];
+    var launch_date = result["date_published"];
+    var score = result["imdb_score"];
+    var directors = result["directors"];
+    var actors = result["actors"];
+    var duration = `${result["duration"]} minutes`;
+    var country = result["countries"];
+    var description = result["description"];
+    var box_office = result["worldwide_gross_income"];
+    if (box_office == null) {
+        worldwide = "Information non disponible.";
+    }
+    if (description == "Add a Plot »") {
+        description = "Pas de résumé disponible.";
+    }
+    if (typeof cover != "string") {
+        cover = "img/unavailable.jpg";
+    }
+    var movie_infos = [genres, launch_date, score,
+                       directors, actors, duration, country, description,
+                       box_office];
+    var modal = document.getElementById("myModal");
+    var modal_content = document.getElementById("modal-content");
+    var modal_title = document.getElementById("modal-title");
+    var modal_image = document.getElementById("modal-image");
+    modal_image.src = cover;
+    modal_title.innerHTML = title;
+    modal_content.innerHTML = movie_infos;
+    modal.style.display="flex";
+}
+
+function closeModal(){
+    var closeButton = document.getElementsByClassName("modal-close")[0];
+    var modal = document.getElementById("myModal");
+    console.log(closeButton);
+    closeButton.onclick = function() {
+        modal.style.display = "none";
+      };
+}
+
+
+
+
+load(); 

@@ -48,7 +48,7 @@
               </section>
 
             <div class="categories_titles">
-                <h2>Category 1</h2>
+                <h2>Films d'action</h2>
             </div>
 
             <section class="movies">
@@ -58,7 +58,7 @@
             </section>
 
             <div class="categories_titles">
-                <h2>Category 2</h2>
+                <h2>Films de fantaisie</h2>
             </div>
 
             <section class="movies">
@@ -68,7 +68,7 @@
             </section>
 
             <div class="categories_titles">
-                <h2>Category 3</h2>
+                <h2>Films de guerre</h2>
             </div>
 
             <section class="movies">
@@ -76,6 +76,15 @@
                     <div id="war"> <p>Loading</p></div>
                 <button id="btn-next-war-films" onclick="nextPage('war', WAR_URL)">→</button>
             </section>
+
+        <div class="modal-bg" id="myModal">
+            <img id="modal-image">
+            <div class="modal" >
+                <h2 id="modal-title">Loading</h2>
+                <p id="modal-content">Loading</p>
+            </div>
+            <span class="modal-close" onclick="closeModal()">X</span>
+        </div>
 
         </section>
         <script src="scripts.js"></script>
