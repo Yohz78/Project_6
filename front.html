@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <title> JustStreamIt</title>
         <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
         <header>
@@ -17,71 +18,84 @@
                     JustStreamIt
                 </h1>
                 <p>
-                    Votre meilleur ami pour de bonnes soirées
+                    The reference for a chill evening
                 </p>
             </div>
 
                 <nav>
                     <ul>
-                        <li><a href="accueil.html"> Accueil</a></li>
-                        <li><a href="categories.html"> Catégories</a></li>
+                        <li><a href="accueil.html"> Home</a></li>
+                        <li><a href="categories.html"> Categories</a></li>
                     </ul>
                 </nav>
 
         </header>
 
         <section class="best_movie">
-            <h2 id="best_movie_title">Meilleur Film</h2>
-            <div id="best_movie_div">Loading</div>
+            <div class="best-movie-header">
+                <h2 id="generic">Best film</h2>
+                <p>Clic below to play !</p>
+                <i class="fa-solid fa-circle-play fa-8x" id="play"></i>
+                <h2 id="best_movie_title">Best Film</h2>
+            </div>
+            <div id="best_movie_div"><div class="lds-dual-ring"></div></div>
         </section>
 
         <section class="movies_list">
 
             <div class="categories_titles">
-                <h2>Meilleurs films</h2>
+                <h2>Best films</h2>
             </div>
 
-            <section class="movies">
-                <button id="btn-prev-best-films" onclick="previousPage('best_films', BEST_URL)">←</button>
-                    <div id="best_films"><p>Loading</p></div>
-                <button id="btn-next-best-films" onclick="nextPage('best_films', BEST_URL)">→</button>
-              </section>
+            <div class="movies">
+                <button id="btn-prev-best-films" onclick="previousPage('best_films', BEST_URL)"><i class="fa-solid fa-angles-left fa-5x"></i></button>
+                    <div id="best_films"><div class="lds-dual-ring"></div></div>
+                <button id="btn-next-best-films" onclick="nextPage('best_films', BEST_URL)"><i class="fa-solid fa-angles-right fa-5x"></i></button>
+            </div>
 
             <div class="categories_titles">
-                <h2>Films d'action</h2>
+                <h2>Action</h2>
             </div>
 
-            <section class="movies">
-                <button id="btn-prev-action-films" onclick="previousPage('action', ACTION_URL)">←</button>
-                    <div id="action"> <p>Loading</p></div>
-                <button id="btn-next-action-films" onclick="nextPage('action', ACTION_URL)">→</button>
-            </section>
+            <div class="movies">
+                <button id="btn-prev-action-films" onclick="previousPage('action', ACTION_URL)"><i class="fa-solid fa-angles-left fa-5x"></i></button>
+                    <div id="action"> <div class="lds-dual-ring"></div></div>
+                <button id="btn-next-action-films" onclick="nextPage('action', ACTION_URL)"><i class="fa-solid fa-angles-right fa-5x"></i></button>
+            </div>
 
             <div class="categories_titles">
-                <h2>Films de fantaisie</h2>
+                <h2>Fantasy</h2>
             </div>
 
-            <section class="movies">
-                <button id="btn-prev-fantasy-films" onclick="previousPage('fantasy', FANTASY_URL)">←</button>
-                    <div id="fantasy"> <p>Loading</p></div>
-                <button id="btn-next-fantasy-films" onclick="nextPage('fantasy', FANTASY_URL)">→</button>
-            </section>
+            <div class="movies">
+                <button id="btn-prev-fantasy-films" onclick="previousPage('fantasy', FANTASY_URL)"><i class="fa-solid fa-angles-left fa-5x"></i></button>
+                    <div id="fantasy"> <div class="lds-dual-ring"></div></div>
+                <button id="btn-next-fantasy-films" onclick="nextPage('fantasy', FANTASY_URL)"><i class="fa-solid fa-angles-right fa-5x"></i></button>
+            </div>
 
             <div class="categories_titles">
-                <h2>Films de guerre</h2>
+                <h2>Horror</h2>
             </div>
 
-            <section class="movies">
-                <button id="btn-prev-war-films" onclick="previousPage('war', WAR_URL)">←</button>
-                    <div id="war"> <p>Loading</p></div>
-                <button id="btn-next-war-films" onclick="nextPage('war', WAR_URL)">→</button>
-            </section>
+            <div class="movies">
+                <button id="btn-prev-horror-films" onclick="previousPage('horror', HORROR_URL)"><i class="fa-solid fa-angles-left fa-5x"></i></button>
+                    <div id="horror"> <div class="lds-dual-ring"></div></div>
+                <button id="btn-next-horror-films" onclick="nextPage('horror', HORROR_URL)"><i class="fa-solid fa-angles-right fa-5x"></i></button>
+            </div>
 
         <div class="modal-bg" id="myModal">
             <img id="modal-image">
             <div class="modal" >
                 <h2 id="modal-title">Loading</h2>
-                <p id="modal-content">Loading</p>
+                <p id="modal-Genres">Loading</p>
+                <p id="modal-Release">Loading</p>
+                <p id="modal-Score">Loading</p>
+                <p id="modal-Directors">Loading</p>
+                <p id="modal-Actors">Loading</p>
+                <p id="modal-Duration">Loading</p>
+                <p id="modal-Country">Loading</p>
+                <p id="modal-Description">Loading</p>
+                <p id="modal-BoxOffice">Loading</p>
             </div>
             <span class="modal-close" onclick="closeModal()">X</span>
         </div>
